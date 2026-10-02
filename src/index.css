@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design Tokens ──────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Surfaces */
+    --color-page:        #F8FAFC;
+    --color-card:        rgba(255, 255, 255, 0.78);
+    --color-card-sec:    rgba(241, 245, 249, 0.72);
+    --color-header:      rgba(255, 255, 255, 0.88);
+    --color-footer:      rgba(255, 255, 255, 0.92);
+    --color-border:      #E2E8F0;
+
+    /* Typography */
+    --color-text-prim:   #0F172A;
+    --color-text-body:   #475569;
+    --color-text-sec:    #64748B;
+    --color-text-dis:    #94A3B8;
+
+    /* Accent – Indigo */
+    --color-accent:      #6366F1;
+    --color-accent-h:    #4F46E5;
+    --color-accent-ring: #A5B4FC;
+    --color-accent-sub:  #EEF2FF;
+
+    /* Input */
+    --color-input-bg:    rgba(255, 255, 255, 0.78);
+    --color-input-brd:   #E2E8F0;
+  }
+
+  .dark {
+    /* Surfaces */
+    --color-page:        #050918;
+    --color-card:        rgba(255, 255, 255, 0.08);
+    --color-card-sec:    rgba(255, 255, 255, 0.04);
+    --color-header:      rgba(0, 0, 0, 0.30);
+    --color-footer:      rgba(0, 0, 0, 0.45);
+    --color-border:      rgba(255, 255, 255, 0.10);
+
+    /* Typography */
+    --color-text-prim:   #FFFFFF;
+    --color-text-body:   rgba(255, 255, 255, 0.80);
+    --color-text-sec:    rgba(255, 255, 255, 0.55);
+    --color-text-dis:    rgba(255, 255, 255, 0.28);
+
+    /* Accent – Indigo (same hue, dark-friendly intensities) */
+    --color-accent:      #818CF8;
+    --color-accent-h:    #6366F1;
+    --color-accent-ring: rgba(129, 140, 248, 0.40);
+    --color-accent-sub:  rgba(99, 102, 241, 0.15);
+
+    /* Input */
+    --color-input-bg:    rgba(0, 0, 0, 0.35);
+    --color-input-brd:   rgba(255, 255, 255, 0.10);
+  }
+
+  /* Smooth global transition when theme flips */
+  html {
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* Body uses the page-background token; TubesBackground sits behind via -z-10 */
+  body {
+    background-color: var(--color-page);
+    color: var(--color-text-body);
+    min-height: 100vh;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
